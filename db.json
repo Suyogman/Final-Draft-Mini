@@ -1,0 +1,154 @@
+{
+  "users": [
+    {
+      "id": "1"
+    },
+    {
+      "id": "a177",
+      "firstname": "Suyog",
+      "password": "123456",
+      "mobilenumber": "1234567890",
+      "email": "suyogmankar01@gmail.com",
+      "profile_image": "",
+      "favourites": [
+        "D.Lahane",
+        "Podcast1"
+      ]
+    },
+    {
+      "id": "cda0",
+      "firstname": "abhay",
+      "password": "Abhay@123",
+      "mobilenumber": "9874563210",
+      "email": "abhayraghu69@gmail.com"
+    },
+    {
+      "id": "9713",
+      "firstname": "divyam",
+      "password": "123456",
+      "mobilenumber": "1234567890",
+      "email": "divyam@gmail.com",
+      "profile_image": ""
+    },
+    {
+      "id": "c920",
+      "firstname": "sayali",
+      "password": "123456",
+      "mobilenumber": "1234567890",
+      "email": "sayali@gmail.com",
+      "profile_image": ""
+    },
+    {
+      "id": "5d2b",
+      "firstname": "kunal",
+      "password": "789456",
+      "mobilenumber": "9876543210",
+      "email": "kunal10@gmail.com",
+      "profile_image": ""
+    }
+  ],
+  "books": [
+    {
+      "id": "1",
+      "title": "Bridge of Realms",
+      "author": "B.T. Narro",
+      "language": "English",
+      "image": "/images/2.jpg",
+      "audioLink": "/audio/CAN_YOU_STOP_A_DISASTER .mp3"
+    },
+    {
+      "id": "2",
+      "title": "Bones of Titans",
+      "author": "S.Dhodre",
+      "language": "Hindi",
+      "image": "/images/3.jpg",
+      "audioLink": "/audio/Super_Brain_Deepak_Chopra.mp3"
+    },
+    {
+      "id": "3",
+      "title": "Echoes of fallen kingdom",
+      "author": "K.shidulkar",
+      "language": "English",
+      "image": "/images/4.jpg",
+      "audioLink": "/audio/Hyperfocus.mp3"
+    },
+    {
+      "id": "4",
+      "title": "How I Reset My Brain",
+      "author": "S.Santape",
+      "language": "Hindi",
+      "image": "/images/5.jpg",
+      "audioLink": "/audio/HOW_I_RESET_MY_BRAIN_FOR_SUCCESS.mp3"
+    },
+    {
+      "id": "5",
+      "title": "Travor Noah",
+      "author": "D.Lahane",
+      "language": "English",
+      "image": "/images/6.jpg",
+      "audioLink": "/audio/TRAVOR_NOAH_SNAKE_STORY (2).mp3"
+    },
+    {
+      "id": "6",
+      "title": "",
+      "author": "R.Gandhi",
+      "language": "English",
+      "image": "/images/7.jpg",
+      "audioLink": "/audio/THE_BOOK_THAT_CHANGED_MY_FINANCIAL_LIFE .mp3"
+    }
+  ],
+  "podcasts": [
+    {
+      "id": "1",
+      "title": "Podcast1",
+      "author": "Deepak Chopra",
+      "language": "Hindi",
+      "image": "/images/PODCAST.png",
+      "audioLink": "/audio/Super_Brain_Deepak_Chopra.mp3"
+    },
+    {
+      "id": "2",
+      "title": "Podcast2",
+      "author": "David Robert",
+      "language": "English",
+      "image": "/images/p4.jpeg",
+      "audioLink": "/audio/THE_BOOK_THAT_CHANGED_MY_FINANCIAL_LIFE .mp3"
+    },
+    {
+      "id": "3",
+      "title": "Podcast3",
+      "author": "John D.",
+      "language": "English",
+      "category": "Film and Entertainment",
+      "image": "/images/p3.jpeg",
+      "audioLink": "/audio/I_LEARNED_A_SYSTEM_FOR_REMEMBERING_EVERYTHING.mp3"
+    },
+    {
+      "id": "4",
+      "title": "Podcast4",
+      "author": "Adeline&Danial",
+      "language": "English",
+      "category": "Spirituality",
+      "image": "/images/p5.jpeg",
+      "audioLink": "/audio/Hyperfocus.mp3"
+    },
+    {
+      "id": "5",
+      "title": "Podcast5",
+      "author": "Jack Monson",
+      "language": "English",
+      "category": "Philosophy",
+      "image": "/images/p6.jpeg",
+      "audioLink": "audio/THE_BOOK_THAT_CHANGED_MY_FINANCIAL_LIFE .mp3"
+    },
+    {
+      "id": "6",
+      "title": "Podcast6",
+      "author": "Jeremy",
+      "language": "English",
+      "category": "Education",
+      "image": "/images/p7.jpeg",
+      "audioLink": "/audio/HOW_I_RESET_MY_BRAIN_FOR_SUCCESS.mp3"
+    }
+  ]
+}

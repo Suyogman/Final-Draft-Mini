@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Profile</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="/JS/plugins.js"></script>
+  <style>
+    body {
+      font-family:Verdana, Geneva, Tahoma, sans-serif;
+      background: #e8d9cb;
+      background-image: url(/images/img1.jpg);
+      background-size: cover;
+      margin: 0;
+      padding: 0;
+      color: #0c0c0c;
+    }
+
+    header {
+      background: #333;
+      color: #fff;
+      padding: 10px 20px;
+      text-align: center;
+    }
+
+    nav {
+      background: #2f2b2a;
+      padding: 5px 20px;
+      text-align: center;
+      border-radius: 5px;
+      margin-top: 80px;
+      width: 50%;
+      margin-left: 25%;
+      opacity: 0.6;
+      
+    }
+    
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 15px;
+      font-size: 18px;
+    }
+
+    .container {
+  max-width: 700px;
+  margin: 20px auto;
+  padding: 60px;
+  background-color: #2f2b2a;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  color: rgb(0, 0, 0); /* Set the text color to lightcoral */
+  margin-top: 100px;
+  opacity: 0.6;
+}
+#pass, #home, #fav, #logout, #profilePhoto{
+  color: rgb(255, 255, 255);
+  font-size: larger;
+  font-weight: 300;
+}
+    h2{
+      color: #fffbfb;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    li {
+      margin-bottom: 15px;
+    }
+
+    footer {
+      background: #333;
+      color: #fff;
+      text-align: center;
+      padding: 10px 20px;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+    h1{
+      text-align: center;
+    }
+    nav a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 15px;
+  font-size: 18px;
+  transition: font-weight 0.3s ease; 
+}
+
+nav a:hover {
+  font-weight: bold;
+  color: black;
+}
+.search {
+  background-color: transparent;
+  border: 2px solid white;
+  border-radius: 50px;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  color: #efe6e6;
+  padding-right: 400px;
+}
+.search::placeholder {
+  color: rgb(115, 196, 225);
+}
+
+.search:focus {
+  outline: none;
+  background-color: var(--primary-color);
+}
+
+#logout{
+  background-color: #000000;
+  opacity: 0.9;
+}
+  </style>
+</head>
+
+<body>
+
+
+  <nav>
+ 
+  <h2>My Profile</h2>
+    
+ </nav>
+
+
+ 
+  
+  <script>
+    function uploadPhoto() {
+      var fileInput = document.getElementById('fileInput');
+      var profilePhoto = document.getElementById('profilePhoto');
+      
+      var file = fileInput.files[0];
+      var reader = new FileReader();
+
+      reader.onloadend = function () {
+        profilePhoto.src = reader.result;
+      }
+
+      if (file) {
+        reader.readAsDataURL(file);
+      } else {
+        profilePhoto.src = "path/to/default/photo.jpg";
+      }
+    }
+    $(document).ready(function() {
+      var loggedInUser = sessionStorage.getItem('loggedInUser');
+
+      if (!loggedInUser) {
+        // User is not logged in, redirect to login page
+        window.location.href = '/HTML/login.html';
+      }
+
+      // Logout button click event
+      $('#logout').click(function() {
+        // Remove logged-in user session and redirect to login page
+        sessionStorage.removeItem('loggedInUser');
+        window.location.href = '/HTML/login.html';
+      });
+    });
+  </script>
+ </div>
+
+  <div class="container">
+    <section>
+    
+    </section>
+    <ul><br>
+      <li><a href="/HTML/home.html" id="home"><b>Home</b></a></li><br>
+      <li><a href="/HTML/profileimage.html" id="profilePhoto"><b>Change profilePhoto</b></a></li>
+<br>
+      <li><a href="/HTML/changepassword.html" id="pass"><b>Change Password</b></a></li>
+      <br>
+      <button id="logout" class="btn">Logout</button>
+    </ul>
+  </div>
+
+  <footer>
+    &copy; 
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <script>
+    function logout() {
+      
+      window.location.href = '/HTML/landing.html';
+    }
+  </script>
+
+</body>

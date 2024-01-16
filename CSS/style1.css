@@ -1,0 +1,58 @@
+html,
+body {
+  width: 100vw;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  background-color: #ded0c2;
+  color: rgb(17, 15, 15);
+  font-family: Arial, Helvetica, sans-serif;
+  box-sizing: border-box;
+  line-height: 1.4;
+}
+.latest-movies{
+  position: absolute;
+  width:100%;
+  height: 100%;
+  background-color: black;
+  margin-top: 500px;
+  padding: 0px 20px;
+}
+.latest-movies h1{
+  font-size: 20px;
+  color:rgb(18, 241, 241);
+  
+}
+.latest-container{
+  padding: 5px 0px;
+}
+.latest-container{
+  display: flex;
+  margin-top: 50px;
+  justify-content: space-between;
+  align-items: center;
+}
+.latest-inside img{
+  height: 122px;
+  cursor: pointer;
+  padding: 4px;
+  transition: all 500ms ease-in-out;
+}
+.latest-inside img:hover{
+  transform: scale(1.2);
+}
+
+
+#logo {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+.jumbotron {
+  background-size: cover;
+  opacity: 0.9;
+  padding: 100px;
+  color: rgb(255, 255, 255);
+  text-decoration: solid;
+}

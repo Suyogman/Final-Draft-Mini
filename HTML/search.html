@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Movie Search</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/CSS/style1.css">
+  
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark " style="background-color: rgb(208, 152, 112);">
+    <div class="container">
+      <a class="navbar-brand" href="/HTML/home.html"></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="/HTML/home.html" style="color: black; outline: 1px solid; border-radius: 4px;"><b>HOME</b></a>
+            </li>
+            
+            
+          </ul>
+      </div>
+    </div>
+  </nav>
+
+
+
+
+
+  <!-- <input class="item" type="text" id="searchInput" placeholder="Search for a movie"> -->
+
+  <div class="input-group navbar navbar-dark bg-dark">
+    <input type="text" class="form-control" id="searchInput" placeholder="Search for Audiobooks & Podcasts">
+  </div>
+
+  <div class="container">
+    <div class="latest-inside">
+        <div class="row" id="searchResults">
+            <!-- Movie search results will be displayed here -->
+        </div>
+    </div>
+</div>
+
+
+<!-- Modal -->
+<div
+class="modal fade"
+id="videoModal"
+tabindex="-1"
+role="dialog"
+aria-labelledby="videoModalLabel"
+aria-hidden="true">
+<div class="modal-dialog" role="document">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title" id="videoModalLabel">Audio Player</h5>
+      <button
+        type="button"
+        class="close"
+        data-dismiss="modal"
+        aria-label="Close"
+      >
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <!-- Audio Player -->
+      <audio controls id="audioPlayer">
+        <source id="audioSource" type="audio/mp3" />
+        Your browser does not support the audio tag.
+      </audio>
+    </div>
+    <div class="modal-footer">
+      <button
+        type="button"
+        class="btn btn-secondary"
+        data-dismiss="modal"
+      >
+        Close
+      </button>
+    </div>
+  </div>
+</div>
+</div>
+
+<script>
+    $(document).ready(function() {
+  // Load book data from the JSON file
+  $.getJSON('http://localhost:5000/books', function(books) {
+
+    // Add an event listener for the search input
+    $('#searchInput').on('input', function() {
+      const searchTerm = $(this).val().toLowerCase();
+      const filteredbooks = filterbooks(books, searchTerm);
+      displaybooks(filteredbooks);
+    });
+  });
+
+  // Function to display movies in the search results container
+  function displaybooks(books) {
+    const searchResultsContainer = $('#searchResults');
+    searchResultsContainer.empty();
+
+    if (books.length === 0) {
+      searchResultsContainer.append('<p>No Record found.</p>');
+    } else {
+        books.forEach(function(book) {
+        const bookItem = `<div class="col-md-4">
+          <div class="latest-inside">
+            <img src="${book.image}" class="img-fluid" alt="${book.author}">
+            <h5 class="card-title">${book.author}</h5>
+            <p class="card-text">${book.language}</p>
+            <button class="btn btn-primary" data-toggle="modal" data-target="#videoModal" data-audio-link="${book.audioLink}">
+              Play Audio
+            </button>
+          </div>
+        </div>`;
+        
+        searchResultsContainer.append(bookItem);
+      });
+      
+    }
+  }
+
+  
+
+  // Function to filter movies based on the search term
+  function filterbooks(books, searchTerm) {
+    return books.filter(function(book) {
+      return book.author.toLowerCase().includes(searchTerm);
+    });
+  }
+});
+$("#videoModal").on("show.bs.modal", function (event) {
+      const button = $(event.relatedTarget);
+      const audioLink = button.data("audio-link");
+      const audioSource = document.getElementById("audioSource");
+      audioSource.src = audioLink;
+      document.getElementById("audioPlayer").load(); // Load the new audio source
+      document.getElementById("audioPlayer").play(); // Play the audio
+    });
+
+    $("#videoModal").on("hidden.bs.modal", function () {
+      document.getElementById("audioPlayer").pause(); // Pause the audio when modal is closed
+      document.getElementById("audioSource").src = ""; // Clear the audio source
+    });
+  </script>
+</body>
+</html>

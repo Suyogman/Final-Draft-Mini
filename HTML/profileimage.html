@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="footer.css">
+    <script src="/JS/plugins.js"></script>
+    <script src="https://kit.fontawesome.com/42c8edd2ae.js" crossorigin="anonymous"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&family=Overlock&family=Roboto:wght@300&display=swap"
+        rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <!-- icons -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+</head>
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+    }
+
+    body {
+        width: 100%;
+        background-color: #e8d9cb;
+        color: white;
+        font-family: 'Inter', sans-serif;
+    }
+
+    .main {
+        padding: 1rem;
+    }
+
+    .btn1{
+        background-color: #b6aa9d;
+        height: 50px;
+        width: 100px;
+        border-radius: 15px;
+    }
+
+    .btn2{
+        background-color: #b6aa9d;
+        height: 50px;
+        width: 100px;
+        border-radius: 15px;
+    }
+
+    .model_bg_color {
+        background-color: wheat;
+    }
+
+    .modal_header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .profile_container {
+        display: flex;
+        width: 100%;
+        /* justify-content: center; */
+        /* height: 100vh; */
+        align-items: center;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .profile_info_container {
+        display: flex;
+        width: 100%;
+        height: 78vh;
+        align-items: center;
+        flex-direction: column;
+        gap: 20px;
+        padding-top: 5rem;
+    }
+
+    .profile {
+        /* width: 600px; */
+        /* border: 1px solid red; */
+        padding: 2rem;
+        width: 100%;
+    }
+
+    .profile_info {
+        max-width: 600px;
+        min-width: 100px;
+        padding: 0rem 1rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .profile_label {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    .before_image_container {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .image_container {
+        height: 120px;
+        width: 120px;
+        /* border: 1px solid red; */
+        border-radius: 50%;
+        margin-right: 3rem;
+    }
+
+    .image_container img {
+        object-fit: fill;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+    }
+
+    .image_info_container {
+        height: 150px;
+        width: 150px;
+        /* border: 1px solid red; */
+        border-radius: 50%;
+        /* margin-right: 3rem; */
+    }
+
+    .image_info_container img {
+        object-fit: fill;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+    }
+
+    .input_box {
+        width: 100%;
+    }
+
+    .input_box input,
+    textarea {
+        background-color: rgb(115, 196, 225);
+        color: white !important;
+        border: none !important;
+    }
+
+    .input_box input::placeholder,
+    textarea::placeholder {
+        color: rgba(255, 255, 255, 0.724) !important;
+    }
+
+    .btn_contianer {
+        display: flex;
+        width: 100%;
+        padding-top: 2rem;
+        justify-content: space-evenly;
+    }
+
+    .material-symbols-outlined {
+        font-variation-settings:
+            'FILL' 0,
+            'wght' 200,
+            'GRAD' 0,
+            'opsz' 24;
+        cursor: pointer;
+
+    }
+
+    .form_btn {
+        display: flex;
+        justify-content: flex-end;
+    }
+</style>
+
+<body>
+
+    <main style="margin-top: 150;">
+        <section class="profile_info_container">
+            <div class="profile_info">
+                <div class=" mb-5">
+                    <!-- <div class="image_info_container">
+                        <img src="" alt="" srcset="" id="profile_info_image">
+                    </div> -->
+
+                </div>
+                <div class="">
+                    <h3 id="user_name" style="color: white !important;"></h3>
+                </div>
+                <div class="mb-2">
+                    <span id="user_phone" style="color: white !important;"></span>
+                </div>
+                <div class="mb-2">
+                    <span id="user_email" style="color: white !important;"></span>
+                </div>
+                <div class="mb-2 text-center">
+                    <span id="user_bio" style="color: white !important;"></span>
+                </div>
+                <div class="btn_contianer">
+                    <a href="/HTML/home.html" target="_self">
+                        <button type="button" class="btn1">Home</button>
+                    </a>
+                    
+                    <button type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop"
+                        class="btn2">Edit</button>
+                </div>
+            </div>
+        </section>
+        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+            aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered  modal-lg ">
+                <div class="modal-content model_bg_color">
+
+                    <div class="modal-body" id="modal_body" style="background-color: #16181F;">
+                        <div class="modal_header">
+                            <h5 style="color: white;">Edit Page</h5>
+                            <span class="material-symbols-outlined" data-bs-dismiss="modal" style="color: white;" onclick="clearModal()">
+                                close
+                            </span>
+                        </div>
+                        <section class="profile_container">
+                            <form class="profile" id="edit_form" style="color: white;">
+                                <div class=" mb-3">
+
+                                    <input accept="image/*" id="icon-button-file" onchange="uploadFile()" type="file"
+                                        style="display: none;">
+                                    <label class="profile_label" for="icon-button-file" style="cursor: pointer;">
+                                        <div class="image_container">
+                                            <img src="" alt="" srcset="" id="profile_image">
+                                        </div>
+                                        <span id="profile_file_name" style="color: white;">
+                                            Upload Profile
+                                        </span>
+                                    </label>
+                                </div>
+                                <div class="input_box mb-3">
+                                    <label for="fname" class="form-label">First Name</label>
+                                    <input type="text" required class="form-control" id="fname"
+                                        aria-describedby="emailHelp" disabled>
+                                </div>
+                                <div class="mb-3 form_btn">
+                                    <button type="submit" class="w-100 btn btn-primary">Submit</button>
+                                </div>
+                            </form>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
+        </script>
+    <script src="https://kit.fontawesome.com/5d93eb1089.js" crossorigin="anonymous"></script>
+    <script>
+        const fetchProfileData = async () => {
+            
+            fetch('http://localhost:5000/users')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`HTTP error! Status: ${response.status}`);
+                }
+                $("#profile_info_image").html(`<img src="${my_user.profile_image}" alt="" srcset="" id="profile_info_image">`);
+                return response.json();
+            })
+            .then(data => {
+                console.log('Data from JSON Server:', data);
+                const user = data[0];
+                setUserInfo(user)
+            })
+            .catch(error => {
+                console.error('Error fetching data:', error);
+            });
+            
+        }
+        
+        fetchProfileData();
+        var my_user = JSON.parse(sessionStorage.getItem("loggedInUser"));
+
+        const setUserInfo = (user) => {
+            
+
+            var profile = my_user.profile_image;
+            var name = my_user.firstname
+            var phone = my_user.mobilenumber
+            var email = my_user.email
+
+            profile.src = my_user.profile_image || './images/user.png';
+            name.innerHTML = my_user.firstname;
+            phone.innerHTML = my_user.mobilenumber;
+            email.innerHTML = my_user.email;
+
+            console.log(name);
+            
+            const fname = document.getElementById('fname');
+            const lname = document.getElementById('lname');
+
+            var image = document.getElementById('profile_image')
+            fname.value = my_user.firstname;
+            image.src = my_user.profile_image || './images/user.png';
+
+        }
+
+        var myForm = document.getElementById("edit_form");
+
+        myForm.addEventListener("submit", function (event) {
+            event.preventDefault();
+            // const fname = document.getElementById('fname').value;
+            var image = document.getElementById('profile_image').src;
+            // console.log(image);
+            image = image.includes('images/user.png') ? "" : image;
+            // console.log(fname, lname, bio, image);
+
+            const updatedData = {
+                "profile_image": image,
+            };
+
+            const api = `http://localhost:5000/users/${my_user.id}`;
+
+            fetch(api, {
+                method: 'PATCH',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(updatedData)
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log('Updated data:', data);
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+
+        });
+
+
+        const uploadFile = () => {
+            const fileInput = document.getElementById('icon-button-file');
+            if (fileInput.files.length > 0) {
+                var selectedFile = fileInput.files[0];
+                relativePath = selectedFile.webkitRelativePath;
+                console.log(relativePath);
+                console.log(selectedFile);
+                var fileName = document.getElementById('profile_file_name')
+                fileName.innerHTML = selectedFile.name;
+                var reader = new FileReader();
+                reader.onload = function (e) {
+                    var fileUrl = e.target.result;
+                    // console.log(fileUrl);
+                    var profile = document.getElementById('profile_image')
+                    profile.src = fileUrl;
+                };
+
+                reader.readAsDataURL(selectedFile);
+            } else {
+                alert("Please select a file.");
+            }
+        };
+    </script>
+   
+  
+</body>
+
+</html>
